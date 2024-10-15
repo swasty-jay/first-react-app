@@ -1,38 +1,55 @@
-// import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import React from "react";
 import "./App.css";
 
 function App() {
-  const name = <h1>Daniel Amekpoagbe Yawson</h1>;
-  const age = 21;
+  // Student component defined inside App component
+  const Student = (Props) => {
+    return (
+      <div className="student-card">
+        <h2>Name: {Props.studentName}</h2>
+        <p>
+          <strong>Age:</strong> {Props.studentAge}
+        </p>
+        <p>
+          <strong>Grade:</strong> {Props.studentGrade}
+        </p>
+      </div>
+    );
+  };
+
+  // School component defined inside App component
+
+  const School = (Props) => {
+    return (
+      <div className="school-card">
+        <h2>School Name: {Props.schoolName}</h2>
+        <p>
+          <strong>Location:</strong> {Props.schoolLocation}
+        </p>
+      </div>
+    );
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <div>
-        {name}
-        {age}
-        <User name="daniel Yawson" age={27} email="swastyjay2022@gmail.com" />
-      </div>
-    </>
-  );
-}
-const User = (props) => {
-  return (
-    <div>
-      <h1>{props.name} </h1>
-      <h1>{props.age}</h1>
+    <div className="App">
+      <h1>Student Information</h1>
 
-      <h4>{props.email} </h4>
+      {/* Display multiple students */}
+      <div className="student-section">
+        <Student studentName="Foden" studentAge={23} studentGrade="B" />
+        <Student studentName="Rodri" studentAge={26} studentGrade="A" />
+        <Student studentName="Savio" studentAge={21} studentGrade="B" />
+      </div>
+
+      <h1>School Information</h1>
+
+      {/* Display multiple schools */}
+      <div className="school-section">
+        <School schoolName="Accra senior High" schoolLocation="Accra" />
+        <School schoolName="Cape Coast High" schoolLocation="cape coast" />
+      </div>
     </div>
   );
-};
+}
+
 export default App;
