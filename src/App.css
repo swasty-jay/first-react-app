@@ -4,7 +4,6 @@
   background-color: #1c1c1c;
   color: #fff;
   padding: 20px;
-  display: flex;
   flex-direction: column;
   min-height: 100vh;
 }

@@ -44,7 +44,7 @@ function App() {
       <h1>School Information</h1>
 
       {/* Display multiple schools */}
-      <div className="school-section">
+      <div className="school-section ">
         <School schoolName="Accra senior High" schoolLocation="Accra" />
         <School schoolName="Cape Coast High" schoolLocation="cape coast" />
       </div>
